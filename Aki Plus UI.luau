@@ -11,11 +11,11 @@ local httpService = game:GetService('HttpService')
 	AccentStroke = darker accent for strokes; Deep = near-black blue overlays.
 ]]
 local UITheme = {
-	Accent = Color3.fromRGB(255,0,0)--Color3.fromRGB(3, 140, 252),
-	AccentStroke = Color3.fromRGB(155,0,0)--Color3.fromRGB(26, 110, 179),
-	Surface = Color3.fromRGB(40,20,20)--Color3.fromRGB(24, 31, 42),
-	SurfaceHover = Color3.fromRGB(40,20,20)--Color3.fromRGB(38, 47, 59),
-	Deep = Color3.fromRGB(25,18,9)--Color3.fromRGB(9, 18, 26),
+	Accent = Color3.fromRGB(255,0,0),--Color3.fromRGB(3, 140, 252),
+	AccentStroke = Color3.fromRGB(155,0,0),--Color3.fromRGB(26, 110, 179),
+	Surface = Color3.fromRGB(40,20,20),--Color3.fromRGB(24, 31, 42),
+	SurfaceHover = Color3.fromRGB(40,20,20),--Color3.fromRGB(38, 47, 59),
+	Deep = Color3.fromRGB(25,18,9),--Color3.fromRGB(9, 18, 26),
 }
 
 local Aero = {
