@@ -6,6 +6,18 @@ end
 
 local httpService = game:GetService('HttpService')
 
+--[[
+	UI retheme: edit `UITheme` only. Accent = primary highlights; Surface* = dark blue-gray panels;
+	AccentStroke = darker accent for strokes; Deep = near-black blue overlays.
+]]
+local UITheme = {
+	Accent = Color3.fromRGB(255,0,0)--Color3.fromRGB(3, 140, 252),
+	AccentStroke = Color3.fromRGB(155,0,0)--Color3.fromRGB(26, 110, 179),
+	Surface = Color3.fromRGB(40,20,20)--Color3.fromRGB(24, 31, 42),
+	SurfaceHover = Color3.fromRGB(40,20,20)--Color3.fromRGB(38, 47, 59),
+	Deep = Color3.fromRGB(25,18,9)--Color3.fromRGB(9, 18, 26),
+}
+
 local Aero = {
     
     Tabs  	  = {},
@@ -40,11 +52,11 @@ local Aero = {
     
     Themes = {
         
-        MainColor = Color3.fromRGB(3, 140, 252),
+        MainColor = UITheme.Accent,
         
         Tabs = {
-            Glow  = Color3.fromRGB(3, 140, 252) ,
-            Icon  = Color3.fromRGB(3, 140, 252)
+            Glow  = UITheme.Accent,
+            Icon  = UITheme.Accent
         }
         
     }
@@ -425,7 +437,7 @@ function Aero:Initialize()
         Parent = Main,
         BackgroundTransparency = 1,
         BackgroundColor3 = Color3.fromRGB(255, 255, 255),
-        ImageColor3 = Color3.fromRGB(3, 140, 252),
+        ImageColor3 = UITheme.Accent,
         Image = "rbxassetid://110824124620140",
         BorderSizePixel = 0,
         ZIndex = 200
@@ -501,7 +513,7 @@ function Aero:Initialize()
         BackgroundTransparency = 1,
         BackgroundColor3 = Color3.fromRGB(255, 255, 255),
         ScaleType = Enum.ScaleType.Stretch,
-        ImageColor3 = Color3.fromRGB(3, 140, 252),
+        ImageColor3 = UITheme.Accent,
         Image = "rbxassetid://110824124620140",
         BorderSizePixel = 0,
         ZIndex = 9
@@ -527,7 +539,7 @@ function Aero:Initialize()
         BackgroundTransparency = 1,
         Rotation = 180,
         BackgroundColor3 = Color3.fromRGB(255, 255, 255),
-        ImageColor3 = Color3.fromRGB(3, 140, 252),
+        ImageColor3 = UITheme.Accent,
         Image = "rbxassetid://110824124620140",
         BorderSizePixel = 0,
         ZIndex = 9
@@ -583,7 +595,7 @@ function Aero:Initialize()
             Size = UDim2.new(0, 187, 0, 36),
             Parent = TabHolder,
             BackgroundTransparency = .7,
-            BackgroundColor3 = Color3.fromRGB(3, 140, 252),
+            BackgroundColor3 = UITheme.Accent,
             BorderSizePixel = 0,
             AutoButtonColor = false,
             ZIndex = 5
@@ -639,7 +651,7 @@ function Aero:Initialize()
             BackgroundTransparency = 1,
             ImageTransparency = 1,
             BackgroundColor3 = Color3.fromRGB(255, 255, 255),
-            ImageColor3 = Color3.fromRGB(3, 140, 252),
+            ImageColor3 = UITheme.Accent,
             Image = "rbxassetid://17251150022",
             BorderSizePixel = 0,
             ZIndex = 9
@@ -652,7 +664,7 @@ function Aero:Initialize()
             BackgroundTransparency = 1,
             ImageTransparency = 1,
             BackgroundColor3 = Color3.fromRGB(255, 255, 255),
-            ImageColor3 = Color3.fromRGB(3, 140, 252),
+            ImageColor3 = UITheme.Accent,
             Image = "rbxassetid://17251150022",
             BorderSizePixel = 0,
             ZIndex = 9
@@ -899,7 +911,7 @@ function Aero:Initialize()
                 TextXAlignment = Enum.TextXAlignment.Left,
                 TextYAlignment = Enum.TextYAlignment.Center,
                 RichText = true,
-                TextColor3 = Color3.fromRGB(3, 140, 252),
+                TextColor3 = UITheme.Accent,
                 BackgroundColor3 = Color3.fromRGB(255, 255, 255),
                 TextSize = 22,
                 BorderSizePixel = 0,
@@ -1080,8 +1092,8 @@ function Aero:Initialize()
                     Parent = Toggle,
                     BackgroundTransparency = 1,
                     AnchorPoint = Vector2.new(0.5, 0.5),
-                    BackgroundColor3 = Color3.fromRGB(24, 30, 42),
-                    ImageColor3 = Color3.fromRGB(24, 30, 42),
+                    BackgroundColor3 = UITheme.Surface,
+                    ImageColor3 = UITheme.Surface,
                     Image = "rbxassetid://5656122127",
                     BorderSizePixel = 0,
                     ZIndex = 15
@@ -1130,7 +1142,7 @@ function Aero:Initialize()
                         })
                         
                         Spring.target(Background, 1, 3, {
-                            ImageColor3 = Color3.fromRGB(24, 30, 42),
+                            ImageColor3 = UITheme.Surface,
                             ImageTransparency = 0
                         })
                         
@@ -1209,7 +1221,7 @@ function Aero:Initialize()
                     Position = UDim2.new(0.067, 0, 0.690, 0),
                     Size = UDim2.new(0, 270, 0, 6),
                     Parent = Slider,
-                    BackgroundColor3 = Color3.fromRGB(24, 32, 42),
+                    BackgroundColor3 = UITheme.Surface,
                     BorderSizePixel = 0,
                     ZIndex = 16
                 })
@@ -1223,7 +1235,7 @@ function Aero:Initialize()
                     Position = UDim2.new(0, 0, 0, 0),
                     Size = UDim2.new(0, 67, 0, 6),
                     Parent = SliderBack,
-                    BackgroundColor3 = Color3.fromRGB(3, 140, 252),
+                    BackgroundColor3 = UITheme.Accent,
                     BorderSizePixel = 0,
                     ZIndex = 17
                 })
@@ -1237,7 +1249,7 @@ function Aero:Initialize()
                     Parent = SliderMain,
                     Color = ColorSequence.new({
                         ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 255, 255)),
-                        ColorSequenceKeypoint.new(1, Color3.fromRGB(3, 140, 252)),
+                        ColorSequenceKeypoint.new(1, UITheme.Accent),
                     }),
                     Transparency = NumberSequence.new({
                         NumberSequenceKeypoint.new(0, 0),
@@ -1377,7 +1389,7 @@ function Aero:Initialize()
                     Position = UDim2.new(0.056, 0.000, 0.000, 30.000),
                     Size = UDim2.new(0.000, 277.000, 0.000, 30.000),
                     Parent = Colorpicker,
-                    BackgroundColor3 = Color3.fromRGB(24, 30, 42),
+                    BackgroundColor3 = UITheme.Surface,
                     BorderSizePixel = 0,
                     ZIndex = 16
                 })
@@ -1426,7 +1438,7 @@ function Aero:Initialize()
                     BackgroundTransparency = 1,
                     AnchorPoint = Vector2.new(0.5, 0.5),
                     BackgroundColor3 = Color3.fromRGB(255, 255, 255),
-                    ImageColor3 = Color3.fromRGB(3, 140, 252),
+                    ImageColor3 = UITheme.Accent,
                     Image = "rbxassetid://5552526748",
                     BorderSizePixel = 0,
                     ZIndex = 18
@@ -1449,7 +1461,7 @@ function Aero:Initialize()
                     Size = UDim2.new(0.799, 0.000, 0.829, 0.000),
                     Parent = ColorPopout,
                     AutoButtonColor = false,
-                    BackgroundColor3 = Color3.fromRGB(3, 140, 252),
+                    BackgroundColor3 = UITheme.Accent,
                     ImageColor3 = Color3.fromRGB(255, 255, 255),
                     Image = "rbxassetid://11970108040",
                     BorderSizePixel = 0,
@@ -1491,7 +1503,7 @@ function Aero:Initialize()
                     Position = UDim2.new(0.890, 0.000, 0.920, 0.000),
                     Size = UDim2.new(0.088, 0.000, 0.050, 0.000),
                     Parent = ColorPopout,
-                    BackgroundColor3 = Color3.fromRGB(3, 140, 252),
+                    BackgroundColor3 = UITheme.Accent,
                     BorderSizePixel = 0,
                     ZIndex = 112
                 })
@@ -1510,7 +1522,7 @@ function Aero:Initialize()
                     Size = UDim2.new(0.799, 0.000, 0.050, 0.000),
                     Parent = ColorPopout,
                     AutoButtonColor = false,
-                    BackgroundColor3 = Color3.fromRGB(3, 140, 252),
+                    BackgroundColor3 = UITheme.Accent,
                     BorderSizePixel = 0,
                     ZIndex = 112
                 })
@@ -1810,7 +1822,7 @@ function Aero:Initialize()
                     Position = UDim2.new(0.056, 0, 0, 30),
                     Size = UDim2.new(0, 277, 0, 30),
                     Parent = Dropdown,
-                    BackgroundColor3 = Color3.fromRGB(24, 31, 42),
+                    BackgroundColor3 = UITheme.Surface,
                     BorderSizePixel = 0,
                     ZIndex = 16
                 })
@@ -1869,7 +1881,7 @@ function Aero:Initialize()
                     Position = UDim2.new(0.056, 0, 1.015, 0),
                     Size = UDim2.new(0, 277, 0, 0),
                     Parent = Dropdown,
-                    BackgroundColor3 = Color3.fromRGB(24, 32, 42),
+                    BackgroundColor3 = UITheme.Surface,
                     ClipsDescendants = true,
                     BorderSizePixel = 0,
                     AutoButtonColor = false,
@@ -1911,7 +1923,7 @@ function Aero:Initialize()
                         Size = UDim2.new(0, 253, 0, 35),
                         Parent = OptionsHolder,
                         BackgroundTransparency = 1,
-                        BackgroundColor3 = Color3.fromRGB(38, 47, 59),
+                        BackgroundColor3 = UITheme.SurfaceHover,
                         AutoButtonColor = false,
                         BorderSizePixel = 0,
                         ZIndex = 1001
@@ -2098,7 +2110,7 @@ function Aero:Initialize()
                     Position = UDim2.new(0.056, 0.000, 0.000, 30.000),
                     Size = UDim2.new(0.000, 277.000, 0.000, 55.000),
                     Parent = PlayerSelector,
-                    BackgroundColor3 = Color3.fromRGB(24, 32, 42),
+                    BackgroundColor3 = UITheme.Surface,
                     BorderSizePixel = 0,
                     ZIndex = 16
                 })
@@ -2137,7 +2149,7 @@ function Aero:Initialize()
 
                 local UIStroke = createInstance("UIStroke", {
                     Parent = Number,
-                    Color = Color3.fromRGB(3, 140, 252),
+                    Color = UITheme.Accent,
                     Thickness = 1.5,
                     LineJoinMode = Enum.LineJoinMode.Round,
                     Transparency = 0
@@ -2159,7 +2171,7 @@ function Aero:Initialize()
                     Text = '+9',
                     TextXAlignment = Enum.TextXAlignment.Left,
                     TextYAlignment = Enum.TextYAlignment.Center,
-                    TextColor3 = Color3.fromRGB(3, 140, 252),
+                    TextColor3 = UITheme.Accent,
                     BackgroundColor3 = Color3.fromRGB(255, 255, 255),
                     TextSize = 20,
                     BorderSizePixel = 0,
@@ -2201,7 +2213,7 @@ function Aero:Initialize()
                     Name = "Frame",
                     Position = UDim2.new(0.752, 0, 0.372, 0.000),
                     Size = UDim2.new(0.000, 314.000, 0.000, 375.000),
-                    BackgroundColor3 = Color3.fromRGB(9, 18, 26),
+                    BackgroundColor3 = UITheme.Deep,
                     BorderSizePixel = 0,
                     ZIndex = 101,
                     Visible = false,
@@ -2249,7 +2261,7 @@ function Aero:Initialize()
                     Parent = Frame,
                     BackgroundTransparency = 1,
                     BackgroundColor3 = Color3.fromRGB(255, 255, 255),
-                    ImageColor3 = Color3.fromRGB(3, 140, 252),
+                    ImageColor3 = UITheme.Accent,
                     Image = "rbxassetid://110824124620140",
                     ImageTransparency = 0.4,
                     BorderSizePixel = 0,
@@ -2472,7 +2484,7 @@ function Aero:Initialize()
                         BackgroundTransparency = 1,
                         AnchorPoint = Vector2.new(0.5, 0.5),
                         ImageTransparency = 0.699999988079071,
-                        BackgroundColor3 = Color3.fromRGB(34, 115, 255),
+                        BackgroundColor3 = UITheme.Accent,
                         ImageColor3 = Color3.fromRGB(0, 0, 0),
                         Image = "rbxassetid://5656122127",
                         BorderSizePixel = 0,
@@ -2481,7 +2493,7 @@ function Aero:Initialize()
 
                     local UIStroke = createInstance("UIStroke", {
                         Parent = CTBG,
-                        Color = Color3.fromRGB(26, 110, 179),
+                        Color = UITheme.AccentStroke,
                         Thickness = 1,
                         LineJoinMode = Enum.LineJoinMode.Round,
                         Transparency = 1
@@ -2511,7 +2523,7 @@ function Aero:Initialize()
                     local function Deselect()
                         PlayerCard:SetAttribute("Enabled", false)
                         Spring.target(CTBG, 1, 3, {
-                            ImageColor3 = Color3.fromRGB(24, 30, 42)
+                            ImageColor3 = UITheme.Surface
                         })
                         Spring.target(Check, 1, 3, {
                             ImageTransparency = 1
@@ -2543,7 +2555,7 @@ function Aero:Initialize()
                             -- Select this card
                             PlayerCard:SetAttribute("Enabled", true)
                             Spring.target(CTBG, 1, 3, {
-                                ImageColor3 = Color3.fromRGB(3, 140, 252)
+                                ImageColor3 = UITheme.Accent
                             })
                             Spring.target(Check, 1, 3, {
                                 ImageTransparency = 0
@@ -2653,7 +2665,7 @@ function Aero:Initialize()
 					Parent = Keybind,
 					AnchorPoint = Vector2.new(1, 0.5),
 					AutomaticSize = Enum.AutomaticSize.X,
-					BackgroundColor3 = Color3.fromRGB(24, 32, 42),
+					BackgroundColor3 = UITheme.Surface,
 					BorderSizePixel = 0,
 					ZIndex = 16
 				})
